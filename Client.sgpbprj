@@ -2,7 +2,7 @@
 <SGPProject SchemaVersion="4.15.3893.33716" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0">
   <Project id="1" Guid="{ff0d0f9e-28a4-480d-8200-89ed2cd46867}">
     <Properties id="65">
-      <Property Name="AssemblyName" Value="Labyrinth" />
+      <Property Name="AssemblyName" Value="Client" />
     </Properties>
     <Configuration id="835">
       <Property Name="Name" Value="Debug" />
@@ -16,7 +16,7 @@
         <Namespace id="2" Name="BaltieProject">
           <IconCodeClass id="3" PlacementName="RELEASE" Template="Baltie 3D Application" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" IsHiding="false" Access="Public">
             <Properties id="2948">
-              <Property Name="FormText" Value="Labyrinth" />
+              <Property Name="FormText" Value="Client" />
             </Properties>
             <Baltie3D id="1321" Name="baltie0" />
             <Baltie3D id="1324" Name="baltie1" />
@@ -279,9 +279,9 @@ Application.Exit();
                 <Go CharacterInst="1321" />
                 <TurnRight CharacterInst="1321" />
                 <SkyBox SideLeftColor="Black" SideTopColor="Black" SideBottomColor="Black" SideFrontColor="Black" SideBackColor="Black" SideRightColor="Black" Type="1" />
-                <LoadScene Extended="true" Text="Labyrinth.sgpsc" />
+                <LoadScene Extended="true" Text="Client.sgpsc" />
                 <RoundBracket Direction="Start" />
-                <Literal ImplicitType="String" LiteralType="String" Text="Labyrinth.sgpsc" />
+                <Literal ImplicitType="String" LiteralType="String" Text="Client.sgpsc" />
                 <RoundBracket Direction="End" />
                 <EOL />
                 <Indent />
@@ -769,7 +769,7 @@ Application.Exit();
     </ProjectItem>
     <ProjectItem id="2363">
       <Properties id="2364">
-        <Property Name="RelPath" Value="Labyrinth.sgpsc" />
+        <Property Name="RelPath" Value="Client.sgpsc" />
         <Property Name="CopyToOutput" Value="PreserveNewest" />
         <Property Name="BuildAction" Value="None" />
       </Properties>

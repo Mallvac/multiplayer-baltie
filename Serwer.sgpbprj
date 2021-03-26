@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.3893.33716" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0">
+  <Project id="1" Guid="{ff0d0f9e-28a4-480d-8200-89ed2cd46867}">
+    <Properties id="65">
+      <Property Name="AssemblyName" Value="Baltie_Server" />
+    </Properties>
+    <Configuration id="835">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <ProjectItem id="82">
+      <Properties id="81">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="80">
+        <Namespace id="2" Name="BaltieProject">
+          <IconCodeClass id="3" PlacementName="RELEASE" Template="Baltie 3D Application" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" IsHiding="false" Access="Public">
+            <Properties id="2948">
+              <Property Name="FormText" Value="Baltie_Server" />
+            </Properties>
+            <Baltie3D id="1321" Name="baltie0" />
+            <Baltie3D id="1324" Name="baltie1" />
+            <Baltie3D id="1325" Name="baltie2" />
+            <Baltie3D id="1326" Name="baltie3" />
+            <Baltie3D id="1327" Name="baltie4" />
+            <Baltie3D id="1328" Name="baltie5" />
+            <Baltie3D id="1329" Name="baltie6" />
+            <Baltie3D id="1330" Name="baltie7" />
+            <Baltie3D id="1331" Name="baltie8" />
+            <Baltie3D id="1332" Name="baltie9" />
+            <IconMethodHeader id="134">
+              <Indent />
+              <Variable Name="camera" Type="XSprite" />
+              <Variable Name="camIndex" Type="int" />
+              <Variable Name="WaveAnimIndex" Type="int" />
+              <EOL />
+              <Indent />
+              <BaltieDecl CharacterInst="1321" />
+              <EOL />
+            </IconMethodHeader>
+            <BaseType id="4" Value="BaltieForm" />
+            <Constructor id="5" SuperCall="None" Access="Public">
+              <Parameters id="6" />
+              <Text id="7"><![CDATA[
+InitializeInstance();
+]]></Text>
+            </Constructor>
+            <Method id="8" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Type id="9" Value="void" />
+              <Parameters id="10" />
+              <Implements id="11" Value="" />
+              <Text id="12"><![CDATA[
+Application.EnableVisualStyles();
+Application.DoEvents();
+Application.Run(new BaltieProjectForm());
+]]></Text>
+            </Method>
+            <Method id="13" Name="Animation" Linkage="Override" Scope="Instance" Access="Protected">
+              <Type id="14" Value="void" />
+              <Parameters id="15">
+                <Parameter id="75" Access="In" Name="thisThread">
+                  <Type id="76" Value="IXThread" />
+                </Parameter>
+              </Parameters>
+              <Implements id="16" Value="" />
+              <Text id="40"><![CDATA[
+this.InitializeBalties();
+foreach(Baltie baltie in this.BaltieSpace.Balties) {
+  baltie.SetPosition(0,0,0);
+  baltie.Direction = 0;
+}
+if(System.Diagnostics.Debugger.IsAttached)
+  MainAnimationThread();
+else {  
+  try {
+    MainAnimationThread();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    new SGP.XRtlExceptionDialog().ShowDialog(e);
+  }
+}
+XSpace.JoinAnimationThreads();
+Application.Exit();
+]]></Text>
+            </Method>
+            <Method id="41" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Type id="42" Value="void" />
+              <Parameters id="43" />
+              <Implements id="20" Value="" />
+              <GeneratedBody id="44" />
+            </Method>
+            <Method id="47" Name="InitializeBalties" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="48">
+                <Type id="49" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="51" />
+              </Attribute>
+              <Type id="64" Value="System.Void" />
+              <Parameters id="66" />
+              <Implements id="67" Value="" />
+              <GeneratedBody id="68" />
+            </Method>
+            <IconMethod id="21" HeaderLocked="true" Name="MainAnimationThread" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="45">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="22" Value="void" />
+              <Implements id="24" Value="" />
+              <IconCode id="25">
+<Variable Type="string" Name="error"  />
+                <Comment Text="Error code or incoming message user IP" />
+                <EOL />
+                <Indent />
+                <Variable Type="string" Name="output" />
+                <Comment Text="Output of incoming message" />
+                <EOL />
+                <Indent />
+                <VarCall Name="SGP.XUtility.XNetworking.ListeningPort" Type="int" />
+                <Equals />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="8081" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <XNetworkingStartListener />
+                <RoundBracket Direction="Start" />
+                <Out />
+                <VarCall Name="error" Type="string" />
+                <RoundBracket Direction="End" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <While />
+                <RoundBracket Direction="Start" />
+                <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Name="output" Type="string" />
+                <Equals />
+                <XNetworkingReadString />
+                <RoundBracket Direction="Start" />
+                <Out />
+                <VarCall Name="error" Type="string" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SGPRTL.Write3D />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="output" Type="string" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <Else />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <SGPRTL.Write3D />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="error" Type="string" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <SGPRTL.WaitForInput />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="26">
+              <Text id="27"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </IconCodeClass>
+          <Import id="32" Name="System" />
+          <Import id="33" Name="System.Collections" />
+          <Import id="34" Name="System.ComponentModel" />
+          <Import id="35" Name="System.Drawing" />
+          <Import id="36" Name="System.Threading" />
+          <Import id="37" Name="System.Windows.Forms" />
+          <Import id="38" Name="Microsoft.DirectX" />
+          <Import id="39" Name="Microsoft.DirectX.Direct3D" />
+          <Import id="50" Name="SGP.Baltie" />
+          <Import id="52" Name="SGP.XSpace" />
+          <Import id="53" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <ProjectItem id="2363">
+      <Properties id="2364">
+        <Property Name="RelPath" Value="Server.sgpsc" />
+        <Property Name="CopyToOutput" Value="PreserveNewest" />
+        <Property Name="BuildAction" Value="None" />
+      </Properties>
+    </ProjectItem>
+    <AssemblyReference id="54" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="55" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="56" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="57" Version="1.0.2902.0" Name="Microsoft.DirectX" />
+    <AssemblyReference id="2947" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="58" Version="1.0.2902.0" Name="Microsoft.DirectX.Direct3D" />
+    <AssemblyReference id="682" Version="1.0.2911.0" Name="Microsoft.DirectX.Direct3DX" />
+    <AssemblyReference id="683" Name="SGP.XUtility" />
+    <AssemblyReference id="684" Name="SGP.DirectX.DirectMusic" />
+    <AssemblyReference id="685" Name="SGPRTL" />
+  </Project>
+  <Satellites />
+</SGPProject>
