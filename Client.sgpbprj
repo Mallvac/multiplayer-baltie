@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.3893.33716" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0">
+  <Project id="1" Guid="{ff0d0f9e-28a4-480d-8200-89ed2cd46867}">
+    <Properties id="65">
+      <Property Name="AssemblyName" Value="Labyrinth" />
+    </Properties>
+    <Configuration id="835">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <ProjectItem id="82">
+      <Properties id="81">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="80">
+        <Namespace id="2" Name="BaltieProject">
+          <IconCodeClass id="3" PlacementName="RELEASE" Template="Baltie 3D Application" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" IsHiding="false" Access="Public">
+            <Properties id="2948">
+              <Property Name="FormText" Value="Labyrinth" />
+            </Properties>
+            <Baltie3D id="1321" Name="baltie0" />
+            <Baltie3D id="1324" Name="baltie1" />
+            <Baltie3D id="1325" Name="baltie2" />
+            <Baltie3D id="1326" Name="baltie3" />
+            <Baltie3D id="1327" Name="baltie4" />
+            <Baltie3D id="1328" Name="baltie5" />
+            <Baltie3D id="1329" Name="baltie6" />
+            <Baltie3D id="1330" Name="baltie7" />
+            <Baltie3D id="1331" Name="baltie8" />
+            <Baltie3D id="1332" Name="baltie9" />
+            <IconMethodHeader id="134">
+              <Indent />
+              <Variable Name="camera" Type="XSprite" />
+              <Variable Name="camIndex" Type="int" />
+              <Variable Name="WaveAnimIndex" Type="int" />
+              <EOL />
+              <Indent />
+              <BaltieDecl CharacterInst="1321" />
+              <EOL />
+            </IconMethodHeader>
+            <BaseType id="4" Value="BaltieForm" />
+            <Constructor id="5" SuperCall="None" Access="Public">
+              <Parameters id="6" />
+              <Text id="7"><![CDATA[
+InitializeInstance();
+]]></Text>
+            </Constructor>
+            <Method id="8" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Type id="9" Value="void" />
+              <Parameters id="10" />
+              <Implements id="11" Value="" />
+              <Text id="12"><![CDATA[
+Application.EnableVisualStyles();
+Application.DoEvents();
+Application.Run(new BaltieProjectForm());
+]]></Text>
+            </Method>
+            <Method id="13" Name="Animation" Linkage="Override" Scope="Instance" Access="Protected">
+              <Type id="14" Value="void" />
+              <Parameters id="15">
+                <Parameter id="75" Access="In" Name="thisThread">
+                  <Type id="76" Value="IXThread" />
+                </Parameter>
+              </Parameters>
+              <Implements id="16" Value="" />
+              <Text id="40"><![CDATA[
+this.InitializeBalties();
+foreach(Baltie baltie in this.BaltieSpace.Balties) {
+  baltie.SetPosition(0,0,0);
+  baltie.Direction = 0;
+}
+if(System.Diagnostics.Debugger.IsAttached)
+  MainAnimationThread();
+else {  
+  try {
+    MainAnimationThread();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    new SGP.XRtlExceptionDialog().ShowDialog(e);
+  }
+}
+XSpace.JoinAnimationThreads();
+Application.Exit();
+]]></Text>
+            </Method>
+            <Method id="41" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Type id="42" Value="void" />
+              <Parameters id="43" />
+              <Implements id="20" Value="" />
+              <GeneratedBody id="44" />
+            </Method>
+            <Method id="47" Name="InitializeBalties" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="48">
+                <Type id="49" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="51" />
+              </Attribute>
+              <Type id="64" Value="System.Void" />
+              <Parameters id="66" />
+              <Implements id="67" Value="" />
+              <GeneratedBody id="68" />
+            </Method>
+            <IconMethod id="21" HeaderLocked="true" Name="MainAnimationThread" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="45">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="22" Value="void" />
+              <Implements id="24" Value="" />
+              <IconCode id="25">
+                <Indent />
+                <MethodCall Name="bruh" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <While />
+                <RoundBracket Direction="Start" />
+                <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <SGPRTL.ClearInputQueue />
+                <SGPRTL.WaitForInput />
+                <EOL />
+                <Indent />
+                <Indent />
+                <BaltieSprite CharacterInst="1321" />
+                <XSpriteAutoAnimation />
+                <Equals />
+                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <DebugWrite />
+                <RoundBracket Direction="Start" />
+                <Literal ImplicitType="Integer" LiteralType="String" Text="KeyCode = {0}" />
+                <Comma />
+                <SGPRTL.LastKey />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Switch />
+                <RoundBracket Direction="Start" />
+                <SGPRTL.LastKey />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardEscape" Modifier="Constant" />
+                <ApplicationExit />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardE" Modifier="Constant" />
+                <SGPRTL.CameraZFarPlane />
+                <OpSymbol OpSymbol="Increment" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardD" Modifier="Constant" />
+                <SGPRTL.CameraZFarPlane />
+                <OpSymbol OpSymbol="Decrement" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardW" Modifier="Constant" />
+                <SGPRTL.CameraZNearPlane />
+                <OpSymbol OpSymbol="Increment" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardS" Modifier="Constant" />
+                <SGPRTL.CameraZNearPlane />
+                <OpSymbol OpSymbol="Decrement" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardLeft" Modifier="Constant" />
+                <TurnLeft CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardRight" Modifier="Constant" />
+                <TurnRight CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardUp" Modifier="Constant" />
+                <If />
+                <RoundBracket Direction="Start" />
+                <MethodCall Name="CanGo" />
+                <RoundBracket Direction="Start" />
+                <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
+                <RoundBracket Direction="End" />
+                <RoundBracket Direction="End" />
+                <Go CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardDown" Modifier="Constant" />
+                <If />
+                <RoundBracket Direction="Start" />
+                <MethodCall Name="CanGo" />
+                <RoundBracket Direction="Start" />
+                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
+                <RoundBracket Direction="End" />
+                <RoundBracket Direction="End" />
+                <Recede CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardF5" Modifier="Constant" />
+                <MethodCall Name="SwitchCamera" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardSpace" Modifier="Constant" />
+                <MethodCall Name="PlayWaveAnimation" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="83" Name="bruh" Linkage="Static" Scope="Instance" Access="Public">
+              <IconMethodHeader id="46">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="84" Value="void" />
+              <Implements id="86" Value="" />
+              <IconCode id="87">
+                <Indent />
+                <Speed Text="∞" CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Number Number="Six" />
+                <CountedCycle />
+                <Recede CharacterInst="1321" />
+                <TurnLeft CharacterInst="1321" />
+                <Go CharacterInst="1321" />
+                <Go CharacterInst="1321" />
+                <TurnRight CharacterInst="1321" />
+                <SkyBox SideLeftColor="Black" SideTopColor="Black" SideBottomColor="Black" SideFrontColor="Black" SideBackColor="Black" SideRightColor="Black" Type="1" />
+                <LoadScene Extended="true" Text="Labyrinth.sgpsc" />
+                <RoundBracket Direction="Start" />
+                <Literal ImplicitType="String" LiteralType="String" Text="Labyrinth.sgpsc" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <DefaultMouseControllerEnabled />
+                <Equals />
+                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
+                <EOL />
+                <Indent />
+                <Code Text="this.Panel.CenterCameraOnHomeKey" />
+                <Equals />
+                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
+                <EOL />
+                <Indent />
+                <VarCall Type="SGP.XSpace.XCamera" Constant="SGPRTLPanelViewportCamera" Modifier="Constant" />
+                <PositionVector3 />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <VarCall Type="SGP.XSpace.XCamera" Constant="SGPRTLPanelViewportCamera" Modifier="Constant" />
+                <SetOrientationDgr3D />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="180" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <Equals />
+                <XModelCreateSprite />
+                <EOL />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <ArrayAdd />
+                <RoundBracket Direction="Start" />
+                <VarCall Type="SGP.XSpace.XCamera" Constant="SGPRTLPanelViewportCamera" Modifier="Constant" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <VarCall Name="camIndex" Type="int" Local="false" />
+                <Equals />
+                <Number Number="Zero" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="SwitchCamera" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <BaltieSprite CharacterInst="1321" />
+                <ArrayAdd />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <RoundBracket Direction="End" />
+                <Speed Text="6" CharacterInst="1321" />
+                <Show CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Variable Name="help" Type="string" />
+                <Equals />
+                <Literal ImplicitType="Integer" LiteralType="String" Text="F5 - camera, arrows - movement,  Space - wave, Esc - exit" />
+                <EOL />
+                <Indent />
+                <Variable Name="font" Type="System.Drawing.Font" />
+                <Equals />
+                <Font FontFamily="Arial Black" Size="14.25" Style="0" />
+                <EOL />
+                <Indent />
+                <SGPRTL.Write3D />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="help" Type="string" />
+                <Comma />
+                <VarCall Name="font" Type="System.Drawing.Font" />
+                <Comma />
+                <Color Color="White" Extended="true" />
+                <RoundBracket Direction="Start" />
+                <Number Number="Eight" />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="18" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="13" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <SGPRTL.Write3D />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="help" Type="string" />
+                <Comma />
+                <VarCall Name="font" Type="System.Drawing.Font" />
+                <Comma />
+                <Color Color="White" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="15" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="10" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <VarCall Name="WaveAnimIndex" Type="int" Local="false" />
+                <Equals />
+                <ArrayIndexOfObject />
+                <RoundBracket Direction="Start" />
+                <BaltieSprite CharacterInst="1321" />
+                <XSpriteAnimationNames />
+                <Comma />
+                <Literal ImplicitType="Float" LiteralType="String" Text="Wave" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Code Text="Panel.Focus" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="521" Name="SwitchCamera" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="522">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="525" Value="void" />
+              <Implements id="527" Value="" />
+              <IconCode id="528">
+                <Indent />
+                <Switch />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="camIndex" Type="int" Local="false" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <Number Number="Zero" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Show CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Type="SGP.XSpace.XCamera" Constant="SGPRTLPanelViewportCamera" Modifier="Constant" />
+                <SetOrientationDgr3D />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="180" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <SetOrientationDgr3D />
+                <RoundBracket Direction="Start" />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="-30" />
+                <Comma />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <PositionVector3 />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Five" />
+                <Comma />
+                <Number Number="Five" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <Number Number="One" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Show CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Type="SGP.XSpace.XCamera" Constant="SGPRTLPanelViewportCamera" Modifier="Constant" />
+                <SetOrientationDgr3D />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <SetOrientationDgr3D />
+                <RoundBracket Direction="Start" />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="40" />
+                <Comma />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <PositionVector3 />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Four" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="-7" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <Number Number="Two" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Hide CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Type="SGP.XSpace.XCamera" Constant="SGPRTLPanelViewportCamera" Modifier="Constant" />
+                <SetOrientationDgr3D />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="180" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <SetOrientationDgr3D />
+                <RoundBracket Direction="Start" />
+                <Literal ImplicitType="Float" LiteralType="Float" Text="-1.4f" />
+                <Comma />
+                <Number Number="Zero" />
+                <Comma />
+                <Number Number="Zero" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <VarCall Name="camera" Type="XSprite" Local="false" />
+                <PositionVector3 />
+                <RoundBracket Direction="Start" />
+                <Number Number="Zero" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Float" Text=".4f" />
+                <Comma />
+                <Literal ImplicitType="Integer" LiteralType="Float" Text="1.0f" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <OpSymbol OpSymbol="Increment" />
+                <VarCall Name="camIndex" Type="int" Local="false" />
+                <VarCall Name="camIndex" Type="int" Local="false" />
+                <OpSymbol OpSymbol="Modulus" />
+                <Equals />
+                <Number Number="Three" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <BaltieSprite CharacterInst="1321" />
+                <XSpriteAnimation />
+                <OpSymbol OpSymbol="Equality" />
+                <VarCall Name="WaveAnimIndex" Type="int" Local="false" />
+                <RoundBracket Direction="End" />
+                <MethodCall Name="PlayWaveAnimation" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Code Text="Panel.Focus" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="1304" Name="CanGo" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="1305">
+                <MethodHeader />
+                <RoundBracket Direction="Start" />
+                <Variable Name="forward" Type="bool" />
+                <RoundBracket Direction="End" />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="1309" Value="bool" />
+              <Implements id="1313" Value="" />
+              <IconCode id="1314">
+                <Indent />
+                <Variable Name="ray" Type="XRay" />
+                <Equals />
+                <Code Text="new XRay" />
+                <RoundBracket Direction="Start" />
+                <LittleBaltie CharacterInst="1321" />
+                <Number Number="Dot" />
+                <Code Text="Space.GetCubePoint" />
+                <RoundBracket Direction="Start" />
+                <LittleBaltie CharacterInst="1321" />
+                <Number Number="Dot" />
+                <Code Text="Position" />
+                <Comma />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Code Text="XRelativePoint.Center" />
+                <RoundBracket Direction="End" />
+                <Comma />
+                <Code Text="XSpaceUtility.Vector3TransformDirection" />
+                <RoundBracket Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <RoundBracket Direction="Start" />
+                <Code Text="forward" />
+                <TernaryCond />
+                <LittleBaltie CharacterInst="1321" />
+                <Number Number="Dot" />
+                <Code Text="Sprite.ForwardDirection" />
+                <TernarySep />
+                <OpSymbol OpSymbol="Minus" />
+                <LittleBaltie CharacterInst="1321" />
+                <Number Number="Dot" />
+                <Code Text="Sprite.ForwardDirection" />
+                <RoundBracket Direction="End" />
+                <Comma />
+                <LittleBaltie CharacterInst="1321" />
+                <Number Number="Dot" />
+                <Code Text="Sprite.WorldTransformation" />
+                <RoundBracket Direction="End" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Variable Name="info" Type="XSpriteRayIntersectionInfo" />
+                <Indent />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="Start" />
+                <TypeCast Text="XSprite" />
+                <RoundBracket Direction="Start" />
+                <Code Text="BaltieSpace" />
+                <RoundBracket Direction="End" />
+                <RoundBracket Direction="End" />
+                <Number Number="Dot" />
+                <Code Text="WorldRayIntersect" />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="ray" Type="XRay" />
+                <Comma />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Out />
+                <VarCall Name="info" Type="XSpriteRayIntersectionInfo" />
+                <Comma />
+                <Code Text="XSpriteRayIntersectFlags.OnlyVisible|XSpriteRayIntersectFlags.CullNone" />
+                <Comma />
+                <EOL />
+                <Indent />
+                <Indent />
+                <BaltieSprite CharacterInst="1321" />
+                <RoundBracket Direction="End" />
+                <OpLogical LogicalOp="And" />
+                <VarCall Name="info" Type="XSpriteRayIntersectionInfo" />
+                <Number Number="Dot" />
+                <Code Text="WorldDistance" />
+                <OpSymbol OpSymbol="LessThan" />
+                <Number Number="Two" />
+                <RoundBracket Direction="End" />
+                <Return />
+                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
+                <EOL />
+                <Indent />
+                <Return />
+                <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
+                <EOL />
+                <Indent />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="1774" Name="PlayWaveAnimation" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="1775">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="1778" Value="void" />
+              <Implements id="1779" Value="" />
+              <IconCode id="1780">
+                <Indent />
+                <BaltieSprite CharacterInst="1321" />
+                <XSpriteAnimation />
+                <Equals />
+                <VarCall Name="WaveAnimIndex" Type="int" Local="false" />
+                <EOL />
+                <Indent />
+                <BaltieSprite CharacterInst="1321" />
+                <XSpriteAutoAnimation />
+                <Equals />
+                <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="26">
+              <Text id="27"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </IconCodeClass>
+          <Import id="32" Name="System" />
+          <Import id="33" Name="System.Collections" />
+          <Import id="34" Name="System.ComponentModel" />
+          <Import id="35" Name="System.Drawing" />
+          <Import id="36" Name="System.Threading" />
+          <Import id="37" Name="System.Windows.Forms" />
+          <Import id="38" Name="Microsoft.DirectX" />
+          <Import id="39" Name="Microsoft.DirectX.Direct3D" />
+          <Import id="50" Name="SGP.Baltie" />
+          <Import id="52" Name="SGP.XSpace" />
+          <Import id="53" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <ProjectItem id="2363">
+      <Properties id="2364">
+        <Property Name="RelPath" Value="Labyrinth.sgpsc" />
+        <Property Name="CopyToOutput" Value="PreserveNewest" />
+        <Property Name="BuildAction" Value="None" />
+      </Properties>
+    </ProjectItem>
+    <AssemblyReference id="54" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="55" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="56" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="57" Version="1.0.2902.0" Name="Microsoft.DirectX" />
+    <AssemblyReference id="2947" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="58" Version="1.0.2902.0" Name="Microsoft.DirectX.Direct3D" />
+    <AssemblyReference id="682" Version="1.0.2911.0" Name="Microsoft.DirectX.Direct3DX" />
+    <AssemblyReference id="683" Name="SGP.XUtility" />
+    <AssemblyReference id="684" Name="SGP.DirectX.DirectMusic" />
+    <AssemblyReference id="685" Name="SGPRTL" />
+  </Project>
+  <Satellites />
+</SGPProject>
