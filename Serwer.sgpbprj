@@ -30,11 +30,6 @@
             <Baltie3D id="1332" Name="baltie9" />
             <IconMethodHeader id="134">
               <Indent />
-              <Variable Name="camera" Type="XSprite" />
-              <Variable Name="camIndex" Type="int" />
-              <Variable Name="WaveAnimIndex" Type="int" />
-              <EOL />
-              <Indent />
               <BaltieDecl CharacterInst="1321" />
               <EOL />
             </IconMethodHeader>
@@ -109,7 +104,7 @@ Application.Exit();
               <Type id="22" Value="void" />
               <Implements id="24" Value="" />
               <IconCode id="25">
-<Variable Type="string" Name="error"  />
+                <Variable Type="string" Name="error"  />
                 <Comment Text="Error code or incoming message user IP" />
                 <EOL />
                 <Indent />
