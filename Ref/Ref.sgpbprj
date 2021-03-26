@@ -110,7 +110,7 @@ Application.Exit();
               <Implements id="24" Value="" />
               <IconCode id="25">
                 <Indent />
-                <MethodCall Name="Setup" />
+                <MethodCall Name="bruh" />
                 <RoundBracket Direction="Start" />
                 <RoundBracket Direction="End" />
                 <EOL />
@@ -161,6 +161,38 @@ Application.Exit();
                 <Indent />
                 <Indent />
                 <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardE" Modifier="Constant" />
+                <SGPRTL.CameraZFarPlane />
+                <OpSymbol OpSymbol="Increment" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardD" Modifier="Constant" />
+                <SGPRTL.CameraZFarPlane />
+                <OpSymbol OpSymbol="Decrement" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardW" Modifier="Constant" />
+                <SGPRTL.CameraZNearPlane />
+                <OpSymbol OpSymbol="Increment" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardS" Modifier="Constant" />
+                <SGPRTL.CameraZNearPlane />
+                <OpSymbol OpSymbol="Decrement" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <SwitchCase />
                 <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardLeft" Modifier="Constant" />
                 <TurnLeft CharacterInst="1321" />
                 <EOL />
@@ -176,6 +208,13 @@ Application.Exit();
                 <Indent />
                 <SwitchCase />
                 <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardUp" Modifier="Constant" />
+                <If />
+                <RoundBracket Direction="Start" />
+                <MethodCall Name="CanGo" />
+                <RoundBracket Direction="Start" />
+                <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
+                <RoundBracket Direction="End" />
+                <RoundBracket Direction="End" />
                 <Go CharacterInst="1321" />
                 <EOL />
                 <Indent />
@@ -183,6 +222,13 @@ Application.Exit();
                 <Indent />
                 <SwitchCase />
                 <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardDown" Modifier="Constant" />
+                <If />
+                <RoundBracket Direction="Start" />
+                <MethodCall Name="CanGo" />
+                <RoundBracket Direction="Start" />
+                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
+                <RoundBracket Direction="End" />
+                <RoundBracket Direction="End" />
                 <Recede CharacterInst="1321" />
                 <EOL />
                 <Indent />
@@ -213,7 +259,7 @@ Application.Exit();
                 <EOL />
               </IconCode>
             </IconMethod>
-            <IconMethod id="83" Name="Setup" Linkage="Static" Scope="Instance" Access="Public">
+            <IconMethod id="83" Name="bruh" Linkage="Static" Scope="Instance" Access="Public">
               <IconMethodHeader id="46">
                 <MethodHeader />
                 <EOL />
@@ -233,9 +279,9 @@ Application.Exit();
                 <Go CharacterInst="1321" />
                 <TurnRight CharacterInst="1321" />
                 <SkyBox SideLeftColor="Black" SideTopColor="Black" SideBottomColor="Black" SideFrontColor="Black" SideBackColor="Black" SideRightColor="Black" Type="1" />
-                <LoadScene Extended="true" Text="SavedScene.sgpsc" />
+                <LoadScene Extended="true" Text="Client.sgpsc" />
                 <RoundBracket Direction="Start" />
-                <Literal ImplicitType="String" LiteralType="String" Text="SavedScene.sgpsc" />
+                <Literal ImplicitType="String" LiteralType="String" Text="Client.sgpsc" />
                 <RoundBracket Direction="End" />
                 <EOL />
                 <Indent />

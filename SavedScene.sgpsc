@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SGP.XSpace.XScene Version="1.0">
+  <Models>
+    <Model ModelId="2" ModelLocation="SGP.XSpace.XMeshModel,SGP.97.sgpm" />
+    <Model ModelId="1" ModelLocation="SGP.XSpace.XMeshModel,SGP.57.sgpm" />
+  </Models>
+  <Sprites>
+    <SGP.XSpace.XMeshSprite Name="grass" ModelId="1">
+      <Position X="1" Y="0.0025" Z="1" />
+      <Orientation X="0" Y="1" Z="0" W="-4.37139533E-08" />
+      <Scale X="32" Y="1" Z="32" />
+      <PivotLocalPosition X="0" Y="0" Z="0" />
+      <AutoRotation AxisX="0" AxisY="1" AxisZ="0" Angle="0" Speed="0" Paused="false" />
+    </SGP.XSpace.XMeshSprite>
+    <SGP.XSpace.XMeshSprite Name="Obj1" ModelId="15">
+      <Position X="1" Y="1" Z="1" />
+      <Orientation X="0" Y="1" Z="0" W="-4.37139533E-08" />
+      <Scale X="1" Y="1" Z="1" />
+      <PivotLocalPosition X="0" Y="0" Z="0" />
+      <AutoRotation AxisX="0" AxisY="1" AxisZ="0" Angle="0" Speed="0" Paused="false" />
+    </SGP.XSpace.XMeshSprite>
+  </Sprites>
+</SGP.XSpace.XScene>
