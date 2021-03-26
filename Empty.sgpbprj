@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.3892.36391" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0">
+  <Project id="13" Guid="{2fe63d5b-363a-44f3-b47f-54174aa99fe0}">
+    <Properties id="14">
+      <Property Name="AssemblyName" Value="Body" />
+    </Properties>
+    <Configuration id="15">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <ProjectItem id="16">
+      <Properties id="17">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="18">
+        <Namespace id="19" Name="BaltieProject">
+          <IconCodeClass id="20" PlacementName="RELEASE" Template="Baltie 3D Application" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" Access="Public" IsHiding="false">
+            <Properties id="21" />
+            <Baltie3D id="22" Name="baltie0" />
+            <Baltie3D id="23" Name="baltie1" />
+            <Baltie3D id="24" Name="baltie2" />
+            <Baltie3D id="25" Name="baltie3" />
+            <Baltie3D id="26" Name="baltie4" />
+            <Baltie3D id="27" Name="baltie5" />
+            <Baltie3D id="28" Name="baltie6" />
+            <Baltie3D id="29" Name="baltie7" />
+            <Baltie3D id="30" Name="baltie8" />
+            <Baltie3D id="31" Name="baltie9" />
+            <IconMethodHeader id="32" />
+            <BaseType id="33" Value="BaltieForm" />
+            <Constructor id="34" SuperCall="None" Access="Public">
+              <Parameters id="35" />
+              <Text id="36"><![CDATA[
+InitializeInstance();
+]]></Text>
+            </Constructor>
+            <Method id="37" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Attribute id="38">
+                <Type id="39" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="40" />
+              </Attribute>
+              <Type id="41" Value="void" />
+              <Parameters id="42" />
+              <Implements id="43" Value="" />
+              <Text id="12"><![CDATA[
+Application.EnableVisualStyles();
+Application.DoEvents();
+Application.Run(new BaltieProjectForm());
+]]></Text>
+            </Method>
+            <Method id="44" Name="Animation" Linkage="Override" Scope="Instance" Access="Protected">
+              <Attribute id="45">
+                <Type id="46" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="47" />
+              </Attribute>
+              <Type id="48" Value="void" />
+              <Parameters id="49">
+                <Parameter id="50" Access="In" Name="thisThread">
+                  <Type id="51" Value="IXThread" />
+                </Parameter>
+              </Parameters>
+              <Implements id="52" Value="" />
+              <Text id="53"><![CDATA[
+foreach(Baltie baltie in this.BaltieSpace.Balties) {
+  baltie.SetPosition(0,0,0);
+  baltie.Direction = 0;
+}
+try {
+  MainAnimationThread();
+}
+catch(Exception e) {
+  if(!System.Diagnostics.Debugger.IsAttached)
+    new SGP.XRtlExceptionDialog().ShowDialog(e);
+  else
+    throw;
+}
+XSpace.JoinAnimationThreads();
+Application.Exit();
+]]></Text>
+            </Method>
+            <Method id="54" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="55">
+                <Type id="56" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="57" />
+              </Attribute>
+              <Type id="58" Value="void" />
+              <Parameters id="59" />
+              <Implements id="60" Value="" />
+              <GeneratedBody id="61" />
+            </Method>
+            <IconMethod id="62" Name="MainAnimationThread" HeaderLocked="true" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="63">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="66" Value="void" />
+              <Implements id="67" Value="" />
+              <IconCode id="68">
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="263">
+              <Text id="264"><![CDATA[
+
+
+]]></Text>
+            </DirectCode>
+          </IconCodeClass>
+          <Import id="265" Name="System" />
+          <Import id="266" Name="System.IO" />
+          <Import id="267" Name="System.Collections" />
+          <Import id="268" Name="System.ComponentModel" />
+          <Import id="269" Name="System.Drawing" />
+          <Import id="270" Name="System.Threading" />
+          <Import id="271" Name="System.Windows.Forms" />
+          <Import id="272" Name="Microsoft.DirectX" />
+          <Import id="273" Name="Microsoft.DirectX.Direct3D" />
+          <Import id="274" Name="SGP.Baltie" />
+          <Import id="275" Name="SGP.XSpace" />
+          <Import id="276" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <AssemblyReference id="318" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="319" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="320" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="280" Version="1.0.2902.0" Name="Microsoft.DirectX" />
+    <AssemblyReference id="281" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="282" Version="1.0.2902.0" Name="Microsoft.DirectX.Direct3D" />
+    <AssemblyReference id="321" Version="1.0.2911.0" Name="Microsoft.DirectX.Direct3DX" />
+    <AssemblyReference id="284" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="322" Version="1.3.3892.36242" Name="SGP.XUtility" />
+    <AssemblyReference id="323" Version="1.3.3892.36294" Name="SGP.DirectX.DirectMusic" />
+    <AssemblyReference id="287" Version="2.0.0.0" Name="System.Data" />
+    <AssemblyReference id="288" Version="2.0.0.0" Name="System.XML" />
+    <AssemblyReference id="324" Version="1.3.3892.36325" Name="SGPRTL" />
+  </Project>
+  <Satellites />
+</SGPProject>
