@@ -129,7 +129,7 @@ Application.Exit();
                 <Indent />
                 <SGPRTL.FogColor />
                 <Equals />
-                <Color Color="#D9F9FF" />
+                <Color Color="#87CEFF" />
                 <EOL />
                 <Indent />
                 <SGPRTL.FogMode />
@@ -222,7 +222,7 @@ Application.Exit();
                 <Comma />
                 <Literal ImplicitType="Integer" LiteralType="Integer" Text="360" />
                 <Comma />
-                <Color Color="#004000" />
+                <Color Color="#9ACD32" />
                 <Comma />
                 <VarCall Modifier="Constant" Type="System.Boolean" Constant="True" />
                 <RoundBracket Direction="End" />
