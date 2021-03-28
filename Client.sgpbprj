@@ -540,22 +540,22 @@ Application.Exit();
                 <EOL />
                 <Indent />
                 <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardLeft" Modifier="Constant" />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardA" Modifier="Constant" />
                 <TurnLeft CharacterInst="1321" />
                 <EOL />
                 <Indent />
                 <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardRight" Modifier="Constant" />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardD" Modifier="Constant" />
                 <TurnRight CharacterInst="1321" />
                 <EOL />
                 <Indent />
                 <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardUp" Modifier="Constant" />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardW" Modifier="Constant" />
                 <Go CharacterInst="1321" />
                 <EOL />
                 <Indent />
                 <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardDown" Modifier="Constant" />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardS" Modifier="Constant" />
                 <Recede CharacterInst="1321" />
                 <EOL />
                 <Indent />
