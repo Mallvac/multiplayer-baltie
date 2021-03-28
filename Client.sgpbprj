@@ -121,93 +121,10 @@ Application.Exit();
                 <RoundBracket Direction="End" />
                 <Brace Direction="Start" />
                 <EOL />
-                <Indent />
-                <Indent />
-                <SGPRTL.ClearInputQueue />
-                <SGPRTL.WaitForInput />
-                <EOL />
-                <Indent />
-                <Indent />
-                <BaltieSprite CharacterInst="1321" />
-                <XSpriteAutoAnimation />
-                <Equals />
-                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <DebugWrite />
-                <RoundBracket Direction="Start" />
-                <Literal ImplicitType="Integer" LiteralType="String" Text="KeyCode = {0}" />
-                <Comma />
-                <SGPRTL.LastKey />
-                <RoundBracket Direction="End" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Switch />
-                <RoundBracket Direction="Start" />
-                <SGPRTL.LastKey />
-                <RoundBracket Direction="End" />
-                <Brace Direction="Start" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Indent />
-                <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardEscape" Modifier="Constant" />
-                <ApplicationExit />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Indent />
-                <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardLeft" Modifier="Constant" />
-                <TurnLeft CharacterInst="1321" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Indent />
-                <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardRight" Modifier="Constant" />
-                <TurnRight CharacterInst="1321" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Indent />
-                <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardUp" Modifier="Constant" />
-                <Go CharacterInst="1321" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Indent />
-                <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardDown" Modifier="Constant" />
-                <Recede CharacterInst="1321" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Indent />
-                <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardF5" Modifier="Constant" />
-                <MethodCall Name="SwitchCamera" />
+                <MethodCall Name="MovePlayer" />
                 <RoundBracket Direction="Start" />
                 <RoundBracket Direction="End" />
                 <EOL />
-                <Indent />
-                <Indent />
-                <Indent />
-                <SwitchCase />
-                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardSpace" Modifier="Constant" />
-                <MethodCall Name="PlayWaveAnimation" />
-                <RoundBracket Direction="Start" />
-                <RoundBracket Direction="End" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Brace Direction="End" />
-                <EOL />
-                <Indent />
                 <Brace Direction="End" />
                 <EOL />
                 <EOL />
@@ -222,16 +139,6 @@ Application.Exit();
               <Implements id="86" Value="" />
               <IconCode id="87">
                 <Indent />
-                <Speed Text="∞" CharacterInst="1321" />
-                <EOL />
-                <Indent />
-                <Number Number="Six" />
-                <CountedCycle />
-                <Recede CharacterInst="1321" />
-                <TurnLeft CharacterInst="1321" />
-                <Go CharacterInst="1321" />
-                <Go CharacterInst="1321" />
-                <TurnRight CharacterInst="1321" />
                 <SkyBox SideLeftColor="Black" SideTopColor="Black" SideBottomColor="Black" SideFrontColor="Black" SideBackColor="Black" SideRightColor="Black" Type="1" />
                 <LoadScene Extended="true" Text="SavedScene.sgpsc" />
                 <RoundBracket Direction="Start" />
@@ -413,7 +320,7 @@ Application.Exit();
                 <VarCall Name="camera" Type="XSprite" Local="false" />
                 <SetOrientationDgr3D />
                 <RoundBracket Direction="Start" />
-                <Literal ImplicitType="Integer" LiteralType="Integer" Text="-30" />
+                <Literal ImplicitType="Integer" LiteralType="Integer" Text="-25" />
                 <Comma />
                 <Number Number="Zero" />
                 <Comma />
@@ -428,9 +335,9 @@ Application.Exit();
                 <RoundBracket Direction="Start" />
                 <Number Number="Zero" />
                 <Comma />
-                <Number Number="Five" />
+                <Number Number="Four" />
                 <Comma />
-                <Number Number="Five" />
+                <Number Number="Six" />
                 <RoundBracket Direction="End" />
                 <EOL />
                 <Indent />
@@ -573,110 +480,6 @@ Application.Exit();
                 <RoundBracket Direction="Start" />
                 <RoundBracket Direction="End" />
                 <EOL />
-                <EOL />
-              </IconCode>
-            </IconMethod>
-            <IconMethod id="1304" Name="CanGo" Linkage="Static" Scope="Instance" Access="Private">
-              <IconMethodHeader id="1305">
-                <MethodHeader />
-                <RoundBracket Direction="Start" />
-                <Variable Name="forward" Type="bool" />
-                <RoundBracket Direction="End" />
-                <EOL />
-              </IconMethodHeader>
-              <Type id="1309" Value="bool" />
-              <Implements id="1313" Value="" />
-              <IconCode id="1314">
-                <Indent />
-                <Variable Name="ray" Type="XRay" />
-                <Equals />
-                <Code Text="new XRay" />
-                <RoundBracket Direction="Start" />
-                <LittleBaltie CharacterInst="1321" />
-                <Number Number="Dot" />
-                <Code Text="Space.GetCubePoint" />
-                <RoundBracket Direction="Start" />
-                <LittleBaltie CharacterInst="1321" />
-                <Number Number="Dot" />
-                <Code Text="Position" />
-                <Comma />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Code Text="XRelativePoint.Center" />
-                <RoundBracket Direction="End" />
-                <Comma />
-                <Code Text="XSpaceUtility.Vector3TransformDirection" />
-                <RoundBracket Direction="Start" />
-                <EOL />
-                <Indent />
-                <Indent />
-                <RoundBracket Direction="Start" />
-                <Code Text="forward" />
-                <TernaryCond />
-                <LittleBaltie CharacterInst="1321" />
-                <Number Number="Dot" />
-                <Code Text="Sprite.ForwardDirection" />
-                <TernarySep />
-                <OpSymbol OpSymbol="Minus" />
-                <LittleBaltie CharacterInst="1321" />
-                <Number Number="Dot" />
-                <Code Text="Sprite.ForwardDirection" />
-                <RoundBracket Direction="End" />
-                <Comma />
-                <LittleBaltie CharacterInst="1321" />
-                <Number Number="Dot" />
-                <Code Text="Sprite.WorldTransformation" />
-                <RoundBracket Direction="End" />
-                <RoundBracket Direction="End" />
-                <EOL />
-                <Indent />
-                <Variable Name="info" Type="XSpriteRayIntersectionInfo" />
-                <Indent />
-                <EOL />
-                <Indent />
-                <If />
-                <RoundBracket Direction="Start" />
-                <RoundBracket Direction="Start" />
-                <TypeCast Text="XSprite" />
-                <RoundBracket Direction="Start" />
-                <Code Text="BaltieSpace" />
-                <RoundBracket Direction="End" />
-                <RoundBracket Direction="End" />
-                <Number Number="Dot" />
-                <Code Text="WorldRayIntersect" />
-                <RoundBracket Direction="Start" />
-                <VarCall Name="ray" Type="XRay" />
-                <Comma />
-                <EOL />
-                <Indent />
-                <Indent />
-                <Out />
-                <VarCall Name="info" Type="XSpriteRayIntersectionInfo" />
-                <Comma />
-                <Code Text="XSpriteRayIntersectFlags.OnlyVisible|XSpriteRayIntersectFlags.CullNone" />
-                <Comma />
-                <EOL />
-                <Indent />
-                <Indent />
-                <BaltieSprite CharacterInst="1321" />
-                <RoundBracket Direction="End" />
-                <OpLogical LogicalOp="And" />
-                <VarCall Name="info" Type="XSpriteRayIntersectionInfo" />
-                <Number Number="Dot" />
-                <Code Text="WorldDistance" />
-                <OpSymbol OpSymbol="LessThan" />
-                <Number Number="Two" />
-                <RoundBracket Direction="End" />
-                <Return />
-                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
-                <EOL />
-                <Indent />
-                <Return />
-                <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
-                <EOL />
-                <Indent />
-                <EOL />
               </IconCode>
             </IconMethod>
             <IconMethod id="1774" Name="PlayWaveAnimation" Linkage="Static" Scope="Instance" Access="Private">
@@ -698,6 +501,78 @@ Application.Exit();
                 <XSpriteAutoAnimation />
                 <Equals />
                 <VarCall Type="System.Boolean" Constant="True" Modifier="Constant" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="1781" Name="MovePlayer" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="1782">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="1783" Value="void" />
+              <Implements id="1784" Value="" />
+              <IconCode id="1785">
+                <SGPRTL.ClearInputQueue />
+                <SGPRTL.WaitForInput />
+                <EOL />
+                <BaltieSprite CharacterInst="1321" />
+                <XSpriteAutoAnimation />
+                <Equals />
+                <VarCall Type="System.Boolean" Constant="False" Modifier="Constant" />
+                <EOL />
+                <DebugWrite />
+                <RoundBracket Direction="Start" />
+                <Literal ImplicitType="Integer" LiteralType="String" Text="KeyCode = {0}" />
+                <Comma />
+                <SGPRTL.LastKey />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Switch />
+                <RoundBracket Direction="Start" />
+                <SGPRTL.LastKey />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardEscape" Modifier="Constant" />
+                <ApplicationExit />
+                <EOL />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardLeft" Modifier="Constant" />
+                <TurnLeft CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardRight" Modifier="Constant" />
+                <TurnRight CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardUp" Modifier="Constant" />
+                <Go CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardDown" Modifier="Constant" />
+                <Recede CharacterInst="1321" />
+                <EOL />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardF5" Modifier="Constant" />
+                <MethodCall Name="SwitchCamera" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <SwitchCase />
+                <VarCall Type="System.Windows.Forms.Keys" Constant="KeyboardSpace" Modifier="Constant" />
+                <MethodCall Name="PlayWaveAnimation" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Brace Direction="End" />
                 <EOL />
               </IconCode>
             </IconMethod>
