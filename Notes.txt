@@ -1,2 +1,0 @@
-#Major Issues
-TcpServer crashes after one message send - critical
